@@ -5,7 +5,7 @@
 
     window.addEventListener('message', event => {
         const v = event.data.command;
-
+        
         selectPanel(v);
         showPanel(v);
     });
@@ -15,20 +15,21 @@
     }
 
     function selectPanel(v) {
-        document.querySelectorAll('.changeCodePanel option').forEach(sel => {
-            sel.removeAttribute("selected");
+        document.querySelectorAll('.changeCodePanel option').forEach(elm => {
+            elm.removeAttribute("selected");
         });
-        document.querySelector('.changeCodePanel').querySelector("option[value='" + v + "']").setAttribute("selected", "selected");
+        if(v === 'js') document.querySelector('.changeCodePanel').querySelector("option[value='js']").setAttribute("selected", "selected");
+        else if(v === 'php') document.querySelector('.changeCodePanel').querySelector("option[value='php']").setAttribute("selected", "selected");
+        else if (v === 'py') document.querySelector('.changeCodePanel').querySelector("option[value='py']").setAttribute("selected", "selected");
     }
 
     function showPanel(v) {
-        document.querySelectorAll('.panel').forEach(function(div) {
-            div.style.display = 'none';
+        document.querySelectorAll('.panel').forEach(function(elm) {
+            elm.style.display = 'none';
         });
         if(v === 'js') document.querySelector('.panel-js').style.display = 'block';
         else if(v === 'php') document.querySelector('.panel-php').style.display = 'block';
         else if (v === 'py') document.querySelector('.panel-py').style.display = 'block';
-        }
     }
 
     var FunctionList = {
