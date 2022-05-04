@@ -295,6 +295,98 @@ class CodePanelViewProvider implements vscode.WebviewViewProvider {
 					});
 					break;
 				
+				//  Dart
+				case 'dtIF':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('if'));
+					});
+					break;
+				case 'dtSwitch':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('switch'));
+					});
+					break;
+				case 'dtFor':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('for'));
+					});
+					break;
+				case 'dtForEach':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('foreach'));
+					});
+					break;
+				case 'dtWhile':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('while'));
+					});
+					break;
+				case 'dtDoWhile':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('dowhile'));
+					});
+					break;
+				case 'dtFunction':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('function'));
+					});
+					break;
+				case 'dtAssert':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('assert'));
+					});
+					break;
+				case 'dtClass':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('class'));
+					});
+					break;
+				case 'dtGet':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('get'));
+					});
+					break;
+				case 'dtPost':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('post'));
+					});
+					break;
+				case 'dtJson':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('json'));
+					});
+					break;
+				case 'dtTry':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('try'));
+					});
+					break;
+				case 'dtMain':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('main'));
+					});
+					break;
+				case 'dtHello':
+					active.edit(editBuilder => {
+						const code: cpanel.CodeInterface = new cpanel.Code(this._extensionUri);
+						editBuilder.replace(selection, code.dt('hello'));
+					});
+					break;
+				
 				// showPanel
 				case 'showPanel':
 					this.showPanel(webviewView.webview);
@@ -368,6 +460,7 @@ function getCodePanelBody() {
 				<option value="js">Javascript</option>
 				<option value="php">PHP</option>
 				<option value="py">Python</option>
+				<option value="dt">Dart</option>
 			</select>
 		</div>
 
@@ -501,8 +594,8 @@ function getCodePanelBody() {
                 <div class="row">
                     <div class="col-12 col-xs-12 col-md-12">
                         <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="pyIF"><span class="panel-title">IF</span></a>
-                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="pyWith"><span class="panel-title">Dictionary</span></a>
-                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="pyDictionary"><span class="panel-title">With</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="pyWith"><span class="panel-title">With</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="pyDictionary"><span class="panel-title">Dictionary</span></a>
                         <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="pyFor"><span class="panel-title">For</span></a>
                         <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="pyWhile"><span class="panel-title">While</span></a>
                         <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="pyDef"><span class="panel-title">Def</span></a>
@@ -536,7 +629,56 @@ function getCodePanelBody() {
                 </div>
             </div>
 		</div>
-    </div>
+
+		<!--
+			// ///////////////////////////////
+			// Dart Panel
+			// ///////////////////////////////
+		-->
+		<div class="panel panel-primary panel-dt">
+            <div class="panel-heading">
+                <h3>Usual</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-12 col-xs-12 col-md-12">
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtIF"><span class="panel-title">IF</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtAssert"><span class="panel-title">Assert</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtFor"><span class="panel-title">For</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtForEach"><span class="panel-title">For Each</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtWhile"><span class="panel-title">While</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtClass"><span class="panel-title">Class</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtTry"><span class="panel-title">Try Catch</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtMain"><span class="panel-title">Main</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-heading">
+                <h3>Net</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-12 col-xs-12 col-md-12">
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtGet"><span class="panel-title">GET</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtPost"><span class="panel-title">POST</span></a>
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtJson"><span class="panel-title">JSON</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-heading">
+                <h3>ETC</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-12 col-xs-12 col-md-12">
+                        <a href="#" class="btn btn-secondary btn-sm m-1" role="button" data-act="dtHello"><span class="panel-title">Hello</span></a>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div><div id="check"></div>
 	`;
 	
 	return htmlBody;
